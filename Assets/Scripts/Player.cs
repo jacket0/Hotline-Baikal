@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public int Hp { get; private set; }
-    public int Damage { get; private set; }
+    [SerializeField] public int Hp { get; private set; }
+    [SerializeField] public int Damage { get; private set; }
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,5 +18,15 @@ public class Player : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GetDamage(int damage)
+    {
+        Hp -= damage;
+    }
+
+    public void Attack()
+    {
+
     }
 }

@@ -10,6 +10,7 @@ public class CameraScript : MonoBehaviour
     {
         player = FindObjectOfType<CharacterMovement>().transform;
     }
+
     void Update()
     {
         transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);

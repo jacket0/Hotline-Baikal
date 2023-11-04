@@ -4,54 +4,19 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    // Перемещение перса
-    Rigidbody2D rb;
-    public float speed;
+        private Rigidbody2D rb;
+        public float speed = 0.5f;
+        private Vector2 moveVector;
 
-    float x;
-    float y;
-
-    public bool canMove = true;
-
-    // Поворот перса
-    Vector3 mousePosition;
-    Vector3 direct;
-
-    Camera cam;
-
-    private void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-        cam = Camera.main;
-    }
-
-    void Update()
-    {
-        InputManager();
-    }
-    private void FixedUpdate()
-    {
-        if (canMove)
+        void Awake()
         {
-            MovementManager();
+            rb = GetComponent<Rigidbody2D>();
         }
-        RotationCharacter();
-    }
 
-    private void InputManager()
-    {
-        x = Input.GetAxis("Horizontal");
-        y = Input.GetAxis("Vertical");
-    }
-
-    private void MovementManager()
-    {
-        rb.velocity = new Vector2(x * speed, y * speed);
-    }
-
-    private void RotationCharacter()
-    {
-        mousePosition = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, Input.mousePosition.z - cam.transform.position.z));
-        rb.transform.eulerAngles = new Vector3(0, 0, Mathf.Atan2((mousePosition.y - transform.position.y), (mousePosition.x - transform.position.x)) * Mathf.Rad2Deg);
-    }
+        void Update()
+        {
+            moveVector.x = Input.GetAxis("Horizontal");
+            moveVector.y = Input.GetAxis("Vertical");
+            rb.MovePosition(rb.position + moveVector * speed * Time.deltaTime);
+        }
 }
