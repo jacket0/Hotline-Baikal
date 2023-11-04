@@ -18,12 +18,17 @@ public class PlayerAttack : MonoBehaviour
     Coroutine attackCoroutine;
     [SerializeField] float punchPeriod = 1;
 
-    private void Start()
+    void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
-        rb.velocity = transform.up * speed;
-        Invoke("DestroyBullet", timeDestroy);
         _animation = GetComponent<Animator>();
+
+        rb = GetComponent<Rigidbody2D>();
+
+        Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        diference.Normalize();
+        float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotateZ);
+        transform.eulerAngles = new Vector3(0, 0, Mathf.Rad2Deg * Mathf.Atan2(diference.y, diference.x));
     }
 
     // Update is called once per frame
@@ -36,6 +41,8 @@ public class PlayerAttack : MonoBehaviour
 
         Vector3 diference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
+        float rotateZ = Mathf.Atan2(diference.y, diference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotateZ - 90);
     }
 
     IEnumerable AttackContinuously()
