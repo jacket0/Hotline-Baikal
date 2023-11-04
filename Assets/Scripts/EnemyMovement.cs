@@ -6,6 +6,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public Transform playerTrasform;
     public float moveSpeed = 2f;
+    
     void Update()
     { 
         transform.position = Vector2.MoveTowards(transform.position, playerTrasform.position, moveSpeed * Time.deltaTime);
