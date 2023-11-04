@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private Animator _animation;
+    private Animator _animator;
+    private BoxCollider2D hitbox;
 
     public Rigidbody2D rb;
     Coroutine attackCoroutine;
@@ -12,8 +13,8 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        _animation = GetComponent<Animator>();
-
+        _animator = GetComponent<Animator>();
+        hitbox = transform.Find("HitboxGameObjectName").GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -21,8 +22,20 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            _animation.SetBool("Is_attacking", true);
+            _animator.SetTrigger("MeleeAttack");
+            Invoke("ActivateHitbox", 0.2f);
+            Invoke("DeactivateHitbox", 0.4f);
         }
+    }
+
+    void ActivateHitbox()
+    {
+        hitbox.gameObject.SetActive(true);
+    }
+
+    void DeactivateHitbox()
+    {
+        hitbox.gameObject.SetActive(false);
     }
 
     IEnumerable AttackContinuously()

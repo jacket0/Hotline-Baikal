@@ -35,4 +35,6 @@ public class CharacterMovement : MonoBehaviour
         _moveVector.y = Input.GetAxis("Vertical");
         _rb.MovePosition(_rb.position + _moveVector * Speed * Time.deltaTime);
     }
+
+
 }
