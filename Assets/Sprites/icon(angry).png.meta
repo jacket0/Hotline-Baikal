@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: 530fbfd258d19c246bd109fc5630a535
+=======
+guid: 178f7dd03eeab794b9602d249a40bed3
+>>>>>>> Stashed changes
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +38,11 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
+<<<<<<< Updated upstream
     filterMode: 0
+=======
+    filterMode: 1
+>>>>>>> Stashed changes
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +56,11 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
+<<<<<<< Updated upstream
   spritePixelsToUnits: 1080
+=======
+  spritePixelsToUnits: 100
+>>>>>>> Stashed changes
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
