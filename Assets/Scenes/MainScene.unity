@@ -378,7 +378,11 @@ Animator:
   m_GameObject: {fileID: 973724542}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
+<<<<<<< HEAD
+  m_Controller: {fileID: 9100000, guid: 292f52a37f64a72448bf3bd248631c19, type: 2}
+=======
   m_Controller: {fileID: 9100000, guid: 4833d1788d86f2e41903903de28c0603, type: 2}
+>>>>>>> main
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -809,5 +813,10 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 61836660}
+<<<<<<< HEAD
+  - {fileID: 1494263480}
+  - {fileID: 973724550}
+=======
   - {fileID: 973724550}
   - {fileID: 1494263480}
+>>>>>>> main
