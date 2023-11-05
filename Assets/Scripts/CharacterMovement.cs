@@ -25,7 +25,7 @@ public class CharacterMovement : MonoBehaviour
     {
         get
         {
-            return _movementVector.magnitude != 0 ? true : false;
+            return (int)_movementVector.magnitude != 0 ? true : false;
         }
     }
 
