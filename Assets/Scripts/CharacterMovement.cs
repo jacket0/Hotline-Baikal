@@ -55,4 +55,9 @@ public class CharacterMovement : MonoBehaviour
         _animator.SetBool("isMoving", IsMoving);
         _rigidbody.MovePosition(_rigidbody.position + _movementVector * _speed * Time.deltaTime);
     }
+<<<<<<< Updated upstream
+=======
+
+     
+>>>>>>> Stashed changes
 }
