@@ -6,7 +6,6 @@ public class PlayerAttack : MonoBehaviour
 {
     private Animator _animator;
     private Rigidbody2D _rigidbody;
-    private Coroutine _attackCoroutine;
     [SerializeField] private BoxCollider2D _hitboxCollider;
 
     [SerializeField] private float _punchPeriod = 1;
@@ -19,10 +18,9 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && _animator)
         {
-            Invoke("ActivateHitbox", 0.2f);
-            Invoke("DeactivateHitbox", 0.4f);
+            StartCoroutine(AttackContinuously());
         }
     }
 
@@ -36,8 +34,12 @@ public class PlayerAttack : MonoBehaviour
         _hitboxCollider.gameObject.SetActive(false);
     }
 
-    IEnumerable AttackContinuously()
+    private IEnumerator AttackContinuously()
     {
+        _animator.SetTrigger("isAttacking");
+        Invoke("ActivateHitbox", 0.2f);
+        Invoke("DeactivateHitbox", 0.4f);
+
         yield return new WaitForSeconds(_punchPeriod);
     }
 }
