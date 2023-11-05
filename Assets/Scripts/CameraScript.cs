@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    Transform player;
+    private Transform _playerTransform;
 
-    void Start ()
+    void Awake()
     {
-        player = FindObjectOfType<CharacterMovement>().transform;
+        _playerTransform = GameObject.FindWithTag("Player").transform;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = new Vector3(player.position.x, player.position.y, transform.position.z);
+        if (_playerTransform != null)
+        {
+            transform.position = new Vector3(_playerTransform.position.x, _playerTransform.position.y, transform.position.z);
+        }
     }
 }

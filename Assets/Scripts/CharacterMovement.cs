@@ -4,19 +4,40 @@ using UnityEngine;
 
 public class CharacterMovement : MonoBehaviour
 {
-    private Rigidbody2D _rb;
-    private Vector2 _moveVector;
+    private Rigidbody2D _rigidbody;
+    private Animator _animator;
+
+    private Vector2 _movementVector
+    {
+        get
+        {
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+
+            return new Vector2(horizontal, vertical);
+        }
+    }
     private Vector3 _cursorDifference;
-    [SerializeField] private float Speed = 30f;
+
+    [SerializeField] private float _speed;
+
+    public bool IsMoving
+    {
+        get
+        {
+            return _movementVector.magnitude != 0 ? true : false;
+        }
+    }
 
     public float RotationAngle { get; private set; }
 
     void Awake()
     {
-        _rb = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         Move();
         RotateToCursor();
@@ -31,10 +52,7 @@ public class CharacterMovement : MonoBehaviour
 
     private void Move()
     {
-        _moveVector.x = Input.GetAxis("Horizontal");
-        _moveVector.y = Input.GetAxis("Vertical");
-        _rb.MovePosition(_rb.position + _moveVector * Speed * Time.deltaTime);
+        _animator.SetBool("isMoving", IsMoving);
+        _rigidbody.MovePosition(_rigidbody.position + _movementVector * _speed * Time.deltaTime);
     }
-
-
 }

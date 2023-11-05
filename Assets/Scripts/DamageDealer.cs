@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 public class DamageDealer : MonoBehaviour
 {
-    [SerializeField] int damage = 100;
+    [SerializeField] private int _damage = 100;
 
     public int GetDamage()
     {
-        return damage;
+        return _damage;
     }
 
     public void Hit()

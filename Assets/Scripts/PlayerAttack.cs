@@ -5,17 +5,16 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private Animator _animator;
-    private BoxCollider2D hitbox;
+    private Rigidbody2D _rigidbody;
+    private Coroutine _attackCoroutine;
+    [SerializeField] private BoxCollider2D _hitboxCollider;
 
-    public Rigidbody2D rb;
-    Coroutine attackCoroutine;
-    [SerializeField] float punchPeriod = 1;
+    [SerializeField] private float _punchPeriod = 1;
 
     void Start()
     {
         _animator = GetComponent<Animator>();
-        hitbox = transform.Find("HitboxGameObjectName").GetComponent<BoxCollider2D>();
-        rb = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     void Update()
@@ -30,16 +29,16 @@ public class PlayerAttack : MonoBehaviour
 
     void ActivateHitbox()
     {
-        hitbox.gameObject.SetActive(true);
+        _hitboxCollider.gameObject.SetActive(true);
     }
 
     void DeactivateHitbox()
     {
-        hitbox.gameObject.SetActive(false);
+        _hitboxCollider.gameObject.SetActive(false);
     }
 
     IEnumerable AttackContinuously()
     {
-        yield return new WaitForSeconds(punchPeriod);
+        yield return new WaitForSeconds(_punchPeriod);
     }
 }
