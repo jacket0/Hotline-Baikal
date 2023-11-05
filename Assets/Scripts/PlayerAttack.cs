@@ -21,7 +21,6 @@ public class PlayerAttack : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            _animator.SetTrigger("MeleeAttack");
             Invoke("ActivateHitbox", 0.2f);
             Invoke("DeactivateHitbox", 0.4f);
         }
