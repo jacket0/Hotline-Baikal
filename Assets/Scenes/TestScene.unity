@@ -701,11 +701,7 @@ Animator:
   m_GameObject: {fileID: 585815826}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-<<<<<<<< HEAD:Assets/Scenes/TestScene.unity
-  m_Controller: {fileID: 9100000, guid: 4833d1788d86f2e41903903de28c0603, type: 2}
-========
   m_Controller: {fileID: 9100000, guid: 292f52a37f64a72448bf3bd248631c19, type: 2}
->>>>>>>> 64e110c745dab93e4ea0df12c0fe5d4e0f44bbfe:Assets/Scenes/MianScene.unity
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
