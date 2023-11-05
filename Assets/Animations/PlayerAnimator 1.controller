@@ -74,39 +74,8 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 120, y: -40, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-<<<<<<< Updated upstream:Assets/Animations/PlayerAnimator.controller
   m_DefaultState: {fileID: -7671496757803109256}
 --- !u!1101 &-755691377721990777
-=======
-  m_DefaultState: {fileID: 0}
---- !u!1107 &-4377953622278002860
-AnimatorStateMachine:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: MeleeAttack
-  m_ChildStates:
-  - serializedVersion: 1
-    m_State: {fileID: -6202606106143181278}
-    m_Position: {x: 270, y: 150, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 3905697326028469584}
-    m_Position: {x: 300, y: 40, z: 0}
-  m_ChildStateMachines: []
-  m_AnyStateTransitions: []
-  m_EntryTransitions:
-  - {fileID: -7076314807447436530}
-  m_StateMachineTransitions: {}
-  m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: -40, y: -60, z: 0}
-  m_EntryPosition: {x: -40, y: 130, z: 0}
-  m_ExitPosition: {x: 800, y: 120, z: 0}
-  m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 3905697326028469584}
---- !u!1101 &-4083358790248549432
->>>>>>> Stashed changes:Assets/PlayerAnimator.controller
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
