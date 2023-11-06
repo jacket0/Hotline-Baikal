@@ -2,50 +2,62 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private float _speed = 3f;
+    public float RotationSpeed;
+    public float Speed;
     [SerializeField] private float _maxHelth;
-    private float _health;
-    [SerializeField] private static float _minHealth = 0f;
+    public float Health { get; private set; }
+    private static float _minHealth = 0f;
 
-    private int _damage = 10;
-    private float _attackRange = 1f;
-    private float _attackRate = 1f;
+    public float Damage;
+    public float AttackRange;
+    public float AttackRate;
 
-    private Animator _animator;
-    private Player _player;
-    private Transform _playerTransform;
+    public bool IsAlive = true;
+
+    [SerializeField] private Animator _animator;
+    [SerializeField] private Player _player;
+    [SerializeField] private Transform _playerTransform;
+    [SerializeField] private Rigidbody2D _rigidbody;
+
+    [SerializeField] private ScoreDisplay _scoreDisplay;
 
     private float nextAttackTime = 0f;
 
     void Awake()
     {
         _animator = GetComponent<Animator>();
-        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
+        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        _scoreDisplay = _player.gameObject.GetComponent<ScoreDisplay>();
+        _playerTransform = _player.transform;
+        _rigidbody = GetComponent<Rigidbody2D>();
+
+        Health = _maxHelth;
+        IsAlive = true;
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Vector2 direction = _playerTransform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _speed * Time.deltaTime);
-        transform.position = Vector2.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
-
-        if (Vector2.Distance(transform.position, _playerTransform.position) < _attackRange)
+        if (Vector2.Distance(transform.position, _playerTransform.position) <= AttackRange)
         {
-            if (Time.time >= nextAttackTime)
-            {
-                _player.TakeDamage(_damage);
-                nextAttackTime = Time.time + 1f / _attackRate;
-            }
+            Attack();
+        }
+    }
+
+    private void Attack()
+    {
+        if (Time.time >= nextAttackTime)
+        {
+            _animator.SetTrigger("isAttack");
+            _player.TakeDamage(Damage);
+            nextAttackTime = Time.time + 1f / AttackRate;
         }
     }
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
-        if (_health <= 0f)
+        _animator.SetTrigger("isDamaged");
+        Health -= damage;
+        if (Health <= _minHealth)
         {
             Die();
         }
@@ -53,6 +65,14 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        _rigidbody.bodyType = RigidbodyType2D.Static;
         _animator.SetBool("isDie", true);
+        _scoreDisplay.KillTimer();
+        _scoreDisplay.Kill();
+    }
+
+    public void DestroyYacher()
+    {
+        Destroy(gameObject);
     }
 }

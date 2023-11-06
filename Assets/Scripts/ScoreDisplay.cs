@@ -14,11 +14,6 @@ public class ScoreDisplay : MonoBehaviour
     private int _scoreMultiplier = 1;
     private float _holdMultiplierTime = 3f;
 
-    void Start()
-    {
-
-    }
-
     public void Kill()
     {
         _scoreValue += _scoreMultiplier * _scoreForKill;

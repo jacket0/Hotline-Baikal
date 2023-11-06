@@ -6,28 +6,31 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float _maxHealth;
     private static float _minHealth = 0f;
-    private float _health;
-    [SerializeField] private int damage;
+    public float Health;
+    public int Damage;
+    public int Speed;
+    [SerializeField] private Animator _animator;
+    public Animator _headanimator;
 
-    private Animator _animator;
+    public bool IsAlive
+    {
+        get
+        {
+            return (Health > _minHealth);
+        }
+    }
 
-    // Start is called before the first frame update
     void Awake()
     {
         _animator = GetComponent<Animator>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
+        Health = _maxHealth;
     }
 
 
     public void TakeDamage(float damage)
     {
-        _health -= damage;
-        if (_health <= _minHealth)
+        Health -= damage;
+        if (Health <= _minHealth)
         {
             Die();
         }
@@ -36,5 +39,6 @@ public class Player : MonoBehaviour
     private void Die()
     {
         _animator.SetBool("isDie", true);
+        _headanimator.SetTrigger("isHurted");
     }
 }

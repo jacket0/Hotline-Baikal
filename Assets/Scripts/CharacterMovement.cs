@@ -7,6 +7,8 @@ public class CharacterMovement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     private Animator _animator;
 
+    private Player _player;
+
     private Vector2 _movementVector
     {
         get
@@ -18,8 +20,6 @@ public class CharacterMovement : MonoBehaviour
         }
     }
     private Vector3 _cursorDifference;
-
-    [SerializeField] private float _speed;
 
     public bool IsMoving
     {
@@ -35,6 +35,7 @@ public class CharacterMovement : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        _player = GetComponent<Player>();
     }
 
     void FixedUpdate()
@@ -53,6 +54,6 @@ public class CharacterMovement : MonoBehaviour
     private void Move()
     {
         _animator.SetBool("isMoving", IsMoving);
-        _rigidbody.MovePosition(_rigidbody.position + _movementVector * _speed * Time.deltaTime);
+        _rigidbody.MovePosition(_rigidbody.position + _movementVector * _player.Speed * Time.deltaTime);
     }
 }

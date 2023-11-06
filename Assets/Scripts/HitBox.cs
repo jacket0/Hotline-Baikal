@@ -4,31 +4,15 @@ using UnityEngine;
 
 public class HitBox : MonoBehaviour
 {
-    private ScoreDisplay _scoreDisplay;
+    public Player _player;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
         {
-            Die();
-            Destroy(collision.gameObject);
+            collision.attachedRigidbody.AddForce(new Vector2 (25,25),ForceMode2D.Impulse);
+            collision.GetComponent<Enemy>().TakeDamage(_player.Damage);
         }
     }
 
-    private void Die()
-    {
-        _scoreDisplay.KillTimer();
-        _scoreDisplay.Kill();
-    }
-
-    void Start()
-    {
-        _scoreDisplay = FindObjectOfType<ScoreDisplay>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
