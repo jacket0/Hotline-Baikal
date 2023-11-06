@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6f416472110c0d4db59085192421946
+guid: 20592d505dbb9c74090b871f1adc8bb4
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1536
+  spritePixelsToUnits: 1040
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -110,127 +110,232 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Legs_Walk_0
+      name: ground asset_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 3072
-        height: 3072
+        x: 687
+        y: 3492
+        width: 1140
+        height: 1140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3f6bcc13073039e4da18233d4762abee
-      internalID: -379901654
+      spriteID: 7d5de5d1c6fee5b4da2cc0d5043aad79
+      internalID: 942560446
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Legs_Walk_1
+      name: ground asset_1
       rect:
         serializedVersion: 2
-        x: 3072
-        y: 0
-        width: 3072
-        height: 3072
+        x: 1910
+        y: 3489
+        width: 1140
+        height: 1140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3bdefec3afa5eb547ae2d2a3def00acf
-      internalID: 1543154491
+      spriteID: 07393710d8040e64b8b4e9507ce9c702
+      internalID: 1146723885
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Legs_Walk_2
+      name: ground asset_3
       rect:
         serializedVersion: 2
-        x: 6144
-        y: 0
-        width: 3072
-        height: 3072
+        x: 3133
+        y: 3492
+        width: 1140
+        height: 1140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 75d861b4b6b2f594f80a46cded64961a
-      internalID: 2066935709
+      spriteID: 4986ba360cc53214f8b9a59b512bb227
+      internalID: -1274237910
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Legs_Walk_3
+      name: ground asset_4
       rect:
         serializedVersion: 2
-        x: 9216
-        y: 0
-        width: 3072
-        height: 3072
+        x: 4354
+        y: 3496
+        width: 1140
+        height: 1140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f7f884470ceecdc4bb962bc3db44d998
-      internalID: -531745023
+      spriteID: 34e40bd1461852e449aea09347b246a5
+      internalID: 1607017955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Legs_Walk_4
+      name: ground asset_5
       rect:
         serializedVersion: 2
-        x: 12288
-        y: 0
-        width: 3072
-        height: 3072
+        x: 689
+        y: 2252
+        width: 1140
+        height: 1140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 314c248cdb4aee045a580c3e9948ba0b
-      internalID: 211619234
+      spriteID: f1546072e9eec794898a29e6573130e9
+      internalID: 2084446088
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Legs_Walk_5
+      name: ground asset_6
       rect:
         serializedVersion: 2
-        x: 15360
-        y: 0
-        width: 3072
-        height: 3072
+        x: 1910
+        y: 2248
+        width: 1140
+        height: 1140
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5255a8fc4d8159a4e8f052a529f3efb1
-      internalID: 326087969
+      spriteID: 529ba833f1ec6384da7975ba57d903d3
+      internalID: -1205423174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground asset_7
+      rect:
+        serializedVersion: 2
+        x: 3132
+        y: 2249
+        width: 1140
+        height: 1140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8bf6594f1546804db16495abebcdd52
+      internalID: -905012765
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground asset_8
+      rect:
+        serializedVersion: 2
+        x: 4355
+        y: 2249
+        width: 1140
+        height: 1140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a47a6d6f58aaf8241bc6d41b1cf8e22e
+      internalID: 1749362531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground asset_9
+      rect:
+        serializedVersion: 2
+        x: 687
+        y: 1007
+        width: 1140
+        height: 1140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d33320806c2e21a4c8f2a5ee17a7ba59
+      internalID: 101862562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground asset_10
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 1003
+        width: 1140
+        height: 1140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e858c5b58942e04cb546d0e7becef49
+      internalID: 253062606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground asset_11
+      rect:
+        serializedVersion: 2
+        x: 3133
+        y: 1007
+        width: 1140
+        height: 1140
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77a036608ead6ed49b5721d55753e092
+      internalID: 819284307
       vertices: []
       indices: 
       edges: []
@@ -246,12 +351,19 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Legs_Walk_0: -379901654
-      Legs_Walk_1: 1543154491
-      Legs_Walk_2: 2066935709
-      Legs_Walk_3: -531745023
-      Legs_Walk_4: 211619234
-      Legs_Walk_5: 326087969
+      ground asset_0: 942560446
+      ground asset_1: 1146723885
+      ground asset_10: 253062606
+      ground asset_11: 819284307
+      ground asset_12: -1144327166
+      ground asset_2: -605727519
+      ground asset_3: -1274237910
+      ground asset_4: 1607017955
+      ground asset_5: 2084446088
+      ground asset_6: -1205423174
+      ground asset_7: -905012765
+      ground asset_8: 1749362531
+      ground asset_9: 101862562
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

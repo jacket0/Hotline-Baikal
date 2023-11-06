@@ -1,51 +1,58 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 5f;
-    public int attackDistance = 1;
-    public int attackDamage = 10;
-    public LayerMask playerLayer;
+    private float _speed = 3f;
+    [SerializeField] private float _maxHelth;
+    private float _health;
+    [SerializeField] private static float _minHealth = 0f;
 
-    private Transform player;
-    private bool isAttacking = false;
+    private int _damage = 10;
+    private float _attackRange = 1f;
+    private float _attackRate = 1f;
 
-    void Start()
+    private Animator _animator;
+    private Player _player;
+    private Transform _playerTransform;
+
+    private float nextAttackTime = 0f;
+
+    void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
+        _animator = GetComponent<Animator>();
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+        _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
     }
 
     void Update()
     {
-        if (!isAttacking)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
+        Vector2 direction = _playerTransform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Quaternion rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, _speed * Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, _playerTransform.position, _speed * Time.deltaTime);
 
-            if (Vector2.Distance(transform.position, player.position) < attackDistance)
+        if (Vector2.Distance(transform.position, _playerTransform.position) < _attackRange)
+        {
+            if (Time.time >= nextAttackTime)
             {
-                isAttacking = true;
-                Attack();
+                _player.TakeDamage(_damage);
+                nextAttackTime = Time.time + 1f / _attackRate;
             }
         }
     }
 
-    void Attack()
+    public void TakeDamage(float damage)
     {
-        Collider2D[] hitPlayers = Physics2D.OverlapCircleAll(transform.position, attackDistance, playerLayer);
-
-        foreach (Collider2D player in hitPlayers)
+        _health -= damage;
+        if (_health <= 0f)
         {
-            player.GetComponent<Player>().GetDamage(attackDamage);
+            Die();
         }
-
-        Invoke("ResetAttack", 1f);
     }
 
-    void ResetAttack()
+    void Die()
     {
-        isAttacking = false;
+        _animator.SetBool("isDie", true);
     }
 }

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ab14708dbbadc4b4585ca51fe3090a11
+guid: 8385e3421190fdf43bd83256c478232e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 1080
+  spritePixelsToUnits: 1040
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -108,7 +108,70 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ground asset2_8
+      rect:
+        serializedVersion: 2
+        x: 5501
+        y: 2892
+        width: 1145
+        height: 1145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d49c2928fdb3ecf45913286254042280
+      internalID: -384357014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground asset2_9
+      rect:
+        serializedVersion: 2
+        x: 6727
+        y: 2869
+        width: 1145
+        height: 1145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48dd1d6cbdc68143854ac05c3a7cef8
+      internalID: 586274845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ground asset2_16
+      rect:
+        serializedVersion: 2
+        x: 5498
+        y: 1647
+        width: 1145
+        height: 1145
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13814f337b288da49912d75684058ff3
+      internalID: 967279447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -119,7 +182,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      ground asset2_0: -856633765
+      ground asset2_1: -1133566640
+      ground asset2_10: 1630694559
+      ground asset2_11: 212622298
+      ground asset2_12: -1148309967
+      ground asset2_13: 2118286610
+      ground asset2_14: -1894088347
+      ground asset2_15: -1150342075
+      ground asset2_16: 967279447
+      ground asset2_17: 1225317895
+      ground asset2_18: 1898988908
+      ground asset2_19: -348711949
+      ground asset2_2: 1885392599
+      ground asset2_3: -1444039717
+      ground asset2_4: 1334670048
+      ground asset2_5: 1922248867
+      ground asset2_6: -2108430063
+      ground asset2_7: 1121951342
+      ground asset2_8: -384357014
+      ground asset2_9: 586274845
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
