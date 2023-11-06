@@ -10,17 +10,18 @@ public class HitBox : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            _scoreDisplay.Kill();
+            Die();
             Destroy(collision.gameObject);
         }
     }
 
     private void Die()
     {
-        
+        _scoreDisplay.KillTimer();
+        _scoreDisplay.Kill();
     }
 
-    void Awake()
+    void Start()
     {
         _scoreDisplay = FindObjectOfType<ScoreDisplay>();
     }

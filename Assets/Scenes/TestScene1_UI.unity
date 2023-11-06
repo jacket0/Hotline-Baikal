@@ -259,8 +259,8 @@ Canvas:
   m_GameObject: {fileID: 101032423}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 1525338279}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -326,10 +326,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 101032427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -100, y: -26}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 408.9, y: 231.8}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &322682643
 MonoBehaviour:
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: score
+  m_text: 0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 7656cf54dfab5424594f8a87dcd6208f, type: 2}
   m_sharedMaterial: {fileID: 4812166380454091299, guid: 7656cf54dfab5424594f8a87dcd6208f, type: 2}
@@ -440,8 +440,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23a9bc221ea8a1943a430e3a79966251, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreValue: 1
+  _scoreValue: 0
   _scoreDisplay: {fileID: 322682643}
+  secundomer: 10
 --- !u!1 &469364081
 GameObject:
   m_ObjectHideFlags: 0
