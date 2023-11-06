@@ -32,7 +32,6 @@ public class ScoreDisplay : MonoBehaviour
     void Update()
     {
         _scoreDisplay.text = _scoreValue.ToString();
-        Debug.Log(_scoreValue);
         _holdMultiplierTime -= Time.deltaTime;
         if (_holdMultiplierTime < 0)
         {
