@@ -37,9 +37,12 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Vector2.Distance(transform.position, _playerTransform.position) <= AttackRange)
+        if (IsAlive)
         {
-            Attack();
+            if (Vector2.Distance(transform.position, _playerTransform.position) <= AttackRange)
+            {
+                Attack();
+            }
         }
     }
 
