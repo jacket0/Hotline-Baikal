@@ -14,5 +14,6 @@ public class HitBox : MonoBehaviour
             collision.GetComponent<Enemy>().TakeDamage(_player.Damage);
         }
     }
+   
 
 }
